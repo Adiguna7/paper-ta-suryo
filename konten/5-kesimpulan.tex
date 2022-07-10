@@ -1,7 +1,57 @@
-% Ubah judul dan label berikut sesuai dengan yang diinginkan.
-\section{Kesimpulan}
+% % Ubah judul dan label berikut sesuai dengan yang diinginkan.
+\section{Conclusions and Recommendations}
 \label{sec:kesimpulan}
 
-% Ubah paragraf-paragraf pada bagian ini sesuai dengan yang diinginkan.
+\subsection{Conclusions}
+Based on the results of the tests that have been carried out, several conclusions can be drawn as follows:
 
-\lipsum[21-23]
+\begin{enumerate}
+
+  \item A face detection system based on feature pyramid with backbone mobilenet0.25 is able to provide
+  up to seven times faster processing time and higher FPS value
+  up to two times better than face detection systems based on 
+  feature pyramid with \emph{backbone resnet50}.
+  Meanwhile, a system based on \emph{backbone resnet50} is able to provide a higher mAP value of up to $20\%$
+  rather than a backbone mobilenet0.25 based system.
+
+  \item The difference in the height of the camera placement also affects the value of
+  mAP obtained, where when using a camera that is placed parallel to the object's face,
+  mAP value obtained is higher.
+
+  \item The angle of the camera greatly affects the performance of backbone mobilenet0.25, Backbone mobilenet0.25
+  can only detect well in the corners of $50^\circ$ and $60^\circ$. Whereas backbone resnet50 can detect
+  performs well in almost all conditions with longer processing times and detection FPS.
+
+  \item When compared to YOLO and SSD, the face detection system based on feature pyramid is better in almost all aspects
+  one of them if YOLO and SSD can't detect more than three obstacles \citep{nugrohoevalution2016}. Face detection system
+  based on feature pyramid can detect it with good accuracy.
+
+  \item The time of taking video data when using a face detection system based on feature pyramid has no effect on the mAP value.
+  However, if given additional artificial light and the camera is placed parallel, then the mAP value of the two backbone becomes better.
+
+  \item In a test based on the number of objects, a face detection system based on feature pyramid can detect all faces without any errors.
+  better when compared to YOLO and SSD from previous studies which got an error of $3\%$ \citep{nugrohoevalution2016}.
+
+
+\end{enumerate}
+
+
+\subsection{Recomendations}
+
+For further development of this final project, there are several suggestions that can be made, including:
+
+\begin{enumerate}[nolistsep]
+
+  \item Try another backbone that fits the desired condition
+
+  \item Try compare CNN and DCN on context-module face detection system based on feature pyramid to see if when
+  the system will work faster.
+
+  \item Implementing a facial detection system based on feature pyramid into an implementation of a facial recognition system, such as surveillance of theft or so on.
+  
+  \item Implementing a face detection system based on feature pyramid into an application implementation, which can be used using the user interface.
+
+\end{enumerate}
+% % Ubah paragraf-paragraf pada bagian ini sesuai dengan yang diinginkan.
+
+% \lipsum[21-23]

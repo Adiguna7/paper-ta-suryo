@@ -21,6 +21,7 @@
 
 % Digunakan untuk menampilkan tabel dengan style yang lebih baik.
 \usepackage{booktabs}
+\usepackage{multirow}
 
 % Digunakan untuk menampilkan gambar pada dokumen.
 \usepackage{graphicx}
@@ -77,6 +78,10 @@
 \usepackage[caption=false,font=footnotesize]{subfig}
 
 \usepackage{stfloats}
+
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
 
 % Tambahkan format tanda hubung yang benar di sini
 \hyphenation{
