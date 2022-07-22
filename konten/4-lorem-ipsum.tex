@@ -295,7 +295,7 @@ This is the data taken during the day.
 The speed measure is obtained by measuring the travel time
 object from the top to the bottom of the frame, travel time
 it is then calculated by the long range of the camera
-so that the velocity of the object \citep{nugrohoevalution2016} is obtained. There are three conditions
+so that the velocity of the object is obtained \citep{nugrohoevalution2016}. There are three conditions
 the speed of moving objects, each of which is tested as much as three
 previously mentioned times.
 
@@ -463,9 +463,37 @@ lagging behind backbone resnet50 in terms of accuracy with the mAP parameter. Ba
 Meanwhile backbone resnet50 can detect all angles relatively well with a minimum accuracy of $10\%$. From these data, it can be seen that backbone mobilenet0.25 is designed with a search space condition that is not too large but not too small,
 So that face detection can be optimal, while for backbone resnet50 tends to be more robust in all conditions, but with the consequence of heavier and longer processing.
 
+\subsection{Face Aligment}
+Face alignment is a computer vision technique that detects the geometric structure of human faces in digital images. It automatically determines the shape of face components such as eyes and nose based on the location and size of a face. A face alignment program typically works by iteratively adjusting a deformable model, which encodes prior knowledge of face shape or appearance, to account for low-level image evidences and find the face in the image.
+
+\begin{figure} [ht]
+  \centering
+  % Ubah sesuai dengan nama file gambar dan ukuran yang akan digunakan.
+  \includegraphics[width=0.4\textwidth]{gambar/facealigment.png}
+
+  % Ubah sesuai dengan keterangan gambar yang diinginkan.
+  \caption{mAP comparison between Mobilenet 0.25 and Resnet50 backbones using face alignment and not using face alignment}
+  \label{fig:facealigment}
+\end{figure}
+
+From Figure \ref{fig:facealigment} in the face detection system based on the \emph{feature pyramid network}, Face alignment makes the accuracy increase by $1\%$. This increase occurred in the resnet50 and mobilenet0.25 backbones and occurred in all conditions, both day and night using 300W datasets \citep{sagonas2016300} \citep{sagonas2013300} \citep{sagonas2013semi}.
+
+\begin{figure} [ht]
+  \centering
+  % Ubah sesuai dengan nama file gambar dan ukuran yang akan digunakan.
+  \includegraphics[width=0.2\textwidth]{gambar/beforefacealigment.jpg}
+  \includegraphics[width=0.2\textwidth]{gambar/afterfacealigment.jpg}
+
+  % Ubah sesuai dengan keterangan gambar yang diinginkan.
+  \caption{Comparison between before and after face alignment}
+  \label{fig:beforeafterfacealigment}
+\end{figure}
+
+In Figure \ref{fig:beforeafterfacealigment}, An example of an image is shown before being processed using a face alignment and after being processed using a face alignment. It can be seen that the eyes that previously had different heights after the face alignment process became parallel to one another.
+
 \subsection{Comparison with previous research}
 
-In the previous research \citep{nugrohoevalution2016} was detected using the same data but using a face detection system based on YOLO and SSD.
+In the previous research was detected using the same data but using a face detection system based on YOLO and SSD \citep{nugrohoevalution2016}.
 It was also concluded from previous research that the SSD-based face detection system is able to provide
 faster processing time and up to four times better FPS value than YOLO-based face detection systems. While the YOLO-based system
 capable of delivering up to two times higher mAP values than SSD-based systems.
